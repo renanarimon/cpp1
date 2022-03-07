@@ -71,48 +71,45 @@ TEST_CASE("Bad input")
         }
     }
 
-    /**if row or col are negative*/
-    // cout << "hi!\n";
-    // CHECK_THROWS(mat(-1, 1, '$', '%'));
-    // CHECK_THROWS(mat(3, -3, '$', '%'));
-    // CHECK_THROWS(mat(-1, -3, '$', '%'));
 }
 
 /* Add more test cases here */
-// TEST_CASE("Palindrom")
-// {
-//     string st = "";
-//     for (size_t k = 1, m = 11; k < 10 && m < 111; k += 2, m += 2)
-//     {
-//         st = nospaces(mat(k, m, '@', '-'));
-//         int len = st.length();
-//         for (size_t i = 0, j = len-1; i < j; i++, j--)
-//         {
-//             if (st[i] != st[j])
-//             {
-//                 FAIL_CHECK("failed");
-//                 cout << "i: " << st[i] << "j: " << st[j] << endl;
-//                 break;
-//             }
-//         }
-//         cout << "TEST SUCCEED\n";
-//     }
-// }
+TEST_CASE("Palindrom")
+{
+    string st = "";
+    for (size_t k = 1, m = 11; k < 10 && m < 111; k += 2, m += 2)
+    {
+        st = nospaces(mat(k, m, '@', '-'));
+        int len = st.length();
+        for (size_t i = 0, j = len-1; i < j; i++, j--)
+        {
+            if (st[i] != st[j])
+            {
+                FAIL_CHECK("failed");
+                cout << "i: " << st[i] << "j: " << st[j] << endl;
+                break;
+            }
+        }
+        cout << "TEST SUCCEED\n";
+    }
+}
 
 TEST_CASE("more tests"){
     CHECK(nospaces(mat(0, 0, '@', '-')) == "");
+    CHECK(nospaces(mat(3,3, '@', '-')) == "@@@@-@@@@");
+    CHECK(nospaces(mat(5,5, '@', '-')) == "@@@@@@---@@-@-@@---@@@@@@");
+    CHECK(nospaces(mat(1, 1, '@', '-')) == "@");
+    CHECK(nospaces(mat(3, 7, '@', '-')) == "@@@@-@@-@@-@@-@@-@@@@");
     CHECK(nospaces(mat(0, 0, '@', '-')) == "");
+    CHECK(nospaces(mat(3,3, '@', '-')) == "@@@@-@@@@");
+    CHECK(nospaces(mat(5,5, '@', '-')) == "@@@@@@---@@-@-@@---@@@@@@");
+    CHECK(nospaces(mat(1, 1, '@', '-')) == "@");
+    CHECK(nospaces(mat(3, 7, '@', '-')) == "@@@@-@@-@@-@@-@@-@@@@");
     CHECK(nospaces(mat(0, 0, '@', '-')) == "");
-    CHECK(nospaces(mat(0, 0, '@', '-')) == "");
-    CHECK(nospaces(mat(0, 0, '@', '-')) == "");
-    CHECK(nospaces(mat(0, 0, '@', '-')) == "");
-    CHECK(nospaces(mat(0, 0, '@', '-')) == "");
-    CHECK(nospaces(mat(0, 0, '@', '-')) == "");
-    CHECK(nospaces(mat(0, 0, '@', '-')) == "");
-    CHECK(nospaces(mat(0, 0, '@', '-')) == "");
-    CHECK(nospaces(mat(0, 0, '@', '-')) == "");
-    CHECK(nospaces(mat(0, 0, '@', '-')) == "");
-    CHECK(nospaces(mat(0, 0, '@', '-')) == "");
-    CHECK(nospaces(mat(0, 0, '@', '-')) == "");
+    CHECK(nospaces(mat(3,3, '@', '-')) == "@@@@-@@@@");
+    CHECK(nospaces(mat(5,5, '@', '-')) == "@@@@@@---@@-@-@@---@@@@@@");
+    CHECK(nospaces(mat(1, 1, '@', '-')) == "@");
+    CHECK(nospaces(mat(3, 7, '@', '-')) == "@@@@-@@-@@-@@-@@-@@@@");
+    
 
 }

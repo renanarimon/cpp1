@@ -1,0 +1,67 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+# Solution
+solution*
+
+=======
+>>>>>>> Initial commit
+=======
+=======
+<<<<<<< HEAD
+=======
+# Solution
+solution*
+
+>>>>>>> r
+>>>>>>> f
+>>>>>>> f
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+<<<<<<< HEAD
+<<<<<<< HEAD
+demo
+test
+
+# vs code configuration
+**/.vscode
+=======
+>>>>>>> Initial commit
+=======
+=======
+<<<<<<< HEAD
+=======
+demo
+test
+>>>>>>> r
+>>>>>>> f
+>>>>>>> f

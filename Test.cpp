@@ -33,7 +33,6 @@ string nospaces(string input)
 TEST_CASE("Good input")
 {
     CHECK(nospaces(mat(9, 7, '@', '-')) == nospaces("@@@@@@@@@\n"
-<<<<<<< HEAD
                                                     "@-------@\n"
                                                     "@-@@@@@-@\n"
                                                     "@-@---@-@\n"
@@ -47,23 +46,14 @@ TEST_CASE("Good input")
                                                      "@-@@@@@@@@@-@\n"
                                                      "@-----------@\n"
                                                      "@@@@@@@@@@@@@"));
-=======
-													 "@-------@\n"
-													 "@-@@@@@-@\n"
-													 "@-@---@-@\n"
-													 "@-@@@@@-@\n"
-													 "@-------@\n"
-													 "@@@@@@@@@"));
 
-    CHECK(nospaces(mat(1,1, '@', '-'))==  "@");
-    CHECK(nospaces(mat(13, 5, '@', '-'))== nospaces("@@@@@@@@@@@@@\n"
-                                                    "@-----------@\n"
-                                                    "@-@@@@@@@@@-@\n"
-                                                    "@-----------@\n"
-                                                    "@@@@@@@@@@@@@"));
-                                                    
+    CHECK(nospaces(mat(3, 5, '*', '+')) == "****+**+**+****");
+    CHECK(nospaces(mat(5, 3, '*', '+')) == "******+++******");
+    CHECK(nospaces(mat(1, 5, '*', '+')) == "******");
+    CHECK(nospaces(mat(5, 1, '*', '+')) == "******");
+    CHECK((mat(5, 1, '*', '+')) == "******");
+    CHECK((mat(1, 5, '*', '+')) == "*\n*\n*\n*\n*\n*");
 
->>>>>>> f
 }
 
 TEST_CASE("Bad input")
@@ -80,7 +70,6 @@ TEST_CASE("Bad input")
             CHECK_THROWS(mat(i, i, '$', '%'));
         }
     }
-<<<<<<< HEAD
 
     /**if row or col are negative*/
     // cout << "hi!\n";
@@ -127,8 +116,3 @@ TEST_CASE("more tests"){
     CHECK(nospaces(mat(0, 0, '@', '-')) == "");
 
 }
-=======
-}
-
-/* Add more test cases here */
->>>>>>> f

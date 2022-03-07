@@ -1,11 +1,7 @@
 #!/bin/bash
 
 source grade_utils
-<<<<<<< HEAD
 TIMEOUT=30
-=======
-TIMEOUT=3
->>>>>>> f
 run_in_folder_if_exists "$1"
 
 printf "\n\n### Cleaning old files ###\n"

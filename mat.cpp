@@ -6,11 +6,7 @@ namespace ariel
 {
     string mat(int cols, int rows, char ch1, char ch2)
     {
-<<<<<<< HEAD
-        string ans = " ";
-=======
         string ans = "";
->>>>>>> f
         for (size_t i = 0; i < rows; i++)
         {
             ans.append("\n");

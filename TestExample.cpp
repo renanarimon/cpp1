@@ -31,7 +31,6 @@ string nospaces(string input) {
 
 
 TEST_CASE("Good input") {
-<<<<<<< HEAD
 	CHECK(nospaces(mat(9, 7, '@', '-')) == nospaces("@@@@@@@@@\n"
 													 "@-------@\n"
 													 "@-@@@@@-@\n"
@@ -39,15 +38,6 @@ TEST_CASE("Good input") {
 													 "@-@@@@@-@\n"
 													 "@-------@\n"
 													 "@@@@@@@@@"));
-=======
-	CHECK(nospaces(mat(9, 7, '@', '-')) == nospaces("@@@@@@@@@\n
-													 @-------@\n
-													 @-@@@@@-@\n
-													 @-@---@-@\n
-													 @-@@@@@-@\n
-													 @-------@\n
-													 @@@@@@@@@"));
->>>>>>> f
 	/* Add more test here */
 }
 

@@ -61,7 +61,7 @@ TEST_CASE("Bad input")
     CHECK_THROWS(mat(10, 5, '$', '%'));
 
     /** if row or col is even - Invalid*/
-    for (size_t i = 0; i < 15; i++)
+    for (size_t i = 0; i < 10; i++)
     {
         if (i % 2 == 0)
         {
@@ -76,7 +76,7 @@ TEST_CASE("Bad input")
 /* Add more test cases here */
 TEST_CASE("Palindrom")
 {
-    string st = "";
+    string st = string("");
     for (size_t k = 1, m = 11; k < 100 && m < 110; k += 2, m += 2)
     {
         st = nospaces(mat(k, m, '@', '-'));
@@ -86,7 +86,6 @@ TEST_CASE("Palindrom")
             if (st[i] != st[j])
             {
                 FAIL_CHECK("failed");
-                cout << "i: " << st[i] << "j: " << st[j] << endl;
                 break;
             }
         }
@@ -94,7 +93,7 @@ TEST_CASE("Palindrom")
     }
 }
 
-TEST_CASE("more tests"){
+TEST_CASE("Big input Test"){
     CHECK(nospaces(mat(3,3, '@', '-')) == "@@@@-@@@@");
     CHECK(nospaces(mat(5,5, '@', '-')) == "@@@@@@---@@-@-@@---@@@@@@");
     CHECK(nospaces(mat(1, 1, '@', '-')) == "@");
@@ -128,4 +127,31 @@ TEST_CASE("more tests"){
                                                     "@-@@@@@@@@@-@\n"
                                                     "@-----------@\n"
                                                     "@@@@@@@@@@@@@\n"));
+}
+
+TEST_CASE("negative input"){
+    CHECK_THROWS(mat(-1, 1, '@', '-'));
+    CHECK_THROWS(mat(1, -1, '@', '-'));
+    CHECK_THROWS(mat(-1, -1, '@', '-'));
+}
+
+TEST_CASE("bad char input"){
+    /**if ch is NOT valid char*/
+    CHECK_THROWS(mat(1, 1, '\n', '-'));
+    CHECK_THROWS(mat(1, 1, '\t', '-'));
+    CHECK_THROWS(mat(1, 1, '\r', '-'));
+    CHECK_THROWS(mat(1, 1, ' ', '-'));
+
+    CHECK_THROWS(mat(3, 3, '-', '\n'));
+    CHECK_THROWS(mat(3, 3, '-', '\t'));
+    CHECK_THROWS(mat(3, 3, '-', '\r'));
+    CHECK_THROWS(mat(3, 3, '-', ' '));
+
+    /**if rows=1 or cols=1 ch2 doesn't matter*/
+    CHECK_NOTHROW(mat(1, 3, '@', '\n'));
+    CHECK_NOTHROW(mat(5, 1, '@', '\t'));
+    CHECK_NOTHROW(mat(9, 1, '@', '\r'));
+    CHECK_NOTHROW(mat(1, 1, '@', ' '));
+
+    
 }

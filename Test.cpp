@@ -30,8 +30,11 @@ string nospaces(string input)
     return input;
 }
 
+
 TEST_CASE("Good input")
 {
+
+    /**check without spaces */
     CHECK(nospaces(mat(9, 7, '@', '-')) == nospaces("@@@@@@@@@\n"
                                                     "@-------@\n"
                                                     "@-@@@@@-@\n"
@@ -47,10 +50,15 @@ TEST_CASE("Good input")
                                                      "@-----------@\n"
                                                      "@@@@@@@@@@@@@"));
 
+
     CHECK(nospaces(mat(3, 5, '*', '+')) == "****+**+**+****");
     CHECK(nospaces(mat(5, 3, '*', '+')) == "******+++******");
+
+    /**special case - different input, same output*/
     CHECK(nospaces(mat(1, 5, '*', '+')) == "*****");
     CHECK(nospaces(mat(5, 1, '*', '+')) == "*****");
+
+    /**only '\n' is different*/
     CHECK((mat(5, 1, '*', '+')) == "*****\n");
     CHECK((mat(1, 5, '*', '+')) == "*\n*\n*\n*\n*\n");
 
@@ -73,7 +81,9 @@ TEST_CASE("Bad input")
 
 }
 
-/* Add more test cases here */
+/* check on lot of inputs if string output is palindrom,
+    else: fail.
+*/
 TEST_CASE("Palindrom")
 {
     string st = string("");
@@ -130,18 +140,20 @@ TEST_CASE("Big input Test"){
 }
 
 TEST_CASE("negative input"){
+    /*mat size is always positive*/
     CHECK_THROWS(mat(-1, 1, '@', '-'));
     CHECK_THROWS(mat(1, -1, '@', '-'));
     CHECK_THROWS(mat(-1, -1, '@', '-'));
 }
 
 TEST_CASE("bad char input"){
-    /**if ch is NOT valid char*/
+    /**if ch1 is NOT valid char*/
     CHECK_THROWS(mat(1, 1, '\n', '-'));
     CHECK_THROWS(mat(1, 1, '\t', '-'));
     CHECK_THROWS(mat(1, 1, '\r', '-'));
     CHECK_THROWS(mat(1, 1, ' ', '-'));
 
+    /**if rows!=1 and cols!=1, and ch2 is NOT valid*/
     CHECK_THROWS(mat(3, 3, '-', '\n'));
     CHECK_THROWS(mat(3, 3, '-', '\t'));
     CHECK_THROWS(mat(3, 3, '-', '\r'));
